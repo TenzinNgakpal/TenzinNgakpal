@@ -12,7 +12,7 @@
   </title>
 
   <meta name="description" content="A post graduate who is interested in the fields of Cyber Security and Devops.">
-  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
+  <!-- Coding Keywords for metadata -->
   <meta name="keywords" content="React, C/C++, Python, Rust" />
   <link rel="stylesheet" href="index.css" />
 </head>
@@ -27,7 +27,8 @@
         <ul class="nav__items">
           <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
           <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
-          <li class="nav__item"><a href="#resume" class="nav__link">Resume</a></li>
+          <li class="nav__item"><a href="./CV/Tenzin Ngakpal - CV.pdf" class="nav__link">Resume</a></li>
+          <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
           <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
       </nav>
@@ -40,36 +41,58 @@
         </h1>
         <!-- Put a small paragraph about yourself -->
         <p>A Post Graduate from Lovely Professional University, Phagwara.</p>
-        <a href="#contact" class="btn btn--pink">Get in touch</a>
+        <a href="#contact" class="btn btn--pink">Get in touch!</a>
       </div>
     </div>
   </header>
 
   <main role="main">
 
-    <!-- ***** Education ***** -->
+    <!-- ***** About ***** -->
+    <section class="about" id="about">
+        <div class="row">
+            <h2>About Me</h2>
+            <div class="about__content">
+                <div class="about__text">
+                <!-- Replace the below paragraph with info about yourself -->
+                <p>
+                    I am a Computer Science post graduate of Lovely Professional University with interest in the fields of programming and Devops. 
+                    A cyber security enthusiast who keeps up with the latest developments in the cyberspace.
+                    Also delving into the world of coding with C/C++, Python, React and Rust.
+                    Always willing to learn and develop his skills.
+                </p>
+                <!-- Provide a link to your resume -->
+                <a href="./CV/Tenzin Ngakpal - CV.pdf" class="btn">My Resume</a>
+                </div>
 
-    <section class="work" id="work">
+                <div class="about__photo-container">
+                <!-- Add a nice photo of yourself -->
+                <img class="about__photo" src="./images/tenzin-ngakpal.jpg" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ***** Education ***** -->
+    <section class="education" id="education">
       <div class="row">
         <h2>My Work</h2>
-        <div class="work__boxes">
-
+        <div class="edu__boxes">
           <!-- Each div with the work__box class is a project. -->
-
-          <div class="work__box">
-            <div class="work__text">
+          <div class="edu__box">
+            <div class="edu__text">
               <h3>Portfolio Template</h3>
               <p>
                 A free Open Source Portfolio for anyone to use for free.
               </p>
-              <ul class="work__list">
+              <ul class="edu__list">
                 <li>HTML</li>
                 <li>SCSS</li>
                 <li>JavaScript</li>
                 <li>Parcel</li>
               </ul>
 
-              <div class="work__links">
+              <div class="edu__links">
                 <a href="https://nisar.surge.sh" target="_blank" class="link__text">
                   Visit Site <span>&rarr;</span>
                 </a>
@@ -142,48 +165,22 @@
       </div>
     </section>
 
-    <!-- ***** Resume ***** -->
-
-    <section class="client" id="clients">
+    <!-- ***** Projects ***** -->
+    <section class="projects" id="projects">
       <div class="row">
-        <h2>Clients</h2>
-        <div class="client__logos">
-          <!-- Add logos of the clients or companies you'have worked with. -->
-          <img src="./images/ronjones.png" class="client__logo" alt="Company 2" />
-          <img src="./images/goldengrid.png" class="client__logo" alt="Company 3" />
-          <img src="./images/bullseye.png" class="client__logo" alt="Company 1" />
-          <img src="./images/mighty-furnitures.png" class="client__logo" alt="Company 1" />
-          <img src="./images/fastlane.png" class="client__logo" alt="Company 3" />
-          <img src="./images/chippy.png" class="client__logo" alt="Company 1" />
+        <h2>Projects</h2>
+        <div class="project__logos">
+          <!-- Add logos of the projects or companies you'have worked with. -->
+          <img src="./images/ronjones.png" class="project__logo" alt="Company 2" />
+          <img src="./images/goldengrid.png" class="project__logo" alt="Company 3" />
+          <img src="./images/bullseye.png" class="project__logo" alt="Company 1" />
+          <img src="./images/mighty-furnitures.png" class="project__logo" alt="Company 1" />
+          <img src="./images/fastlane.png" class="project__logo" alt="Company 3" />
+          <img src="./images/chippy.png" class="project__logo" alt="Company 1" />
         </div>
       </div>
     </section>
 
-    <!-- ***** About ***** -->
-
-    <section class="about" id="about">
-      <div class="row">
-        <h2>About Me</h2>
-        <div class="about__content">
-          <div class="about__text">
-            <!-- Replace the below paragraph with info about yourself -->
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id
-              nostrum illo harum blanditiis, tenetur eum suscipit cupiditate
-              in vel, ex quam quidem quos mollitia labore aut sunt eius
-              ratione molestiae fuga veniam facere similique voluptate.
-            </p>
-            <!-- Provide a link to your resume -->
-            <a href="#" class="btn">My Resume</a>
-          </div>
-
-          <div class="about__photo-container">
-            <!-- Add a nice photo of yourself -->
-            <img class="about__photo" src="./images/syed-ali-hussnain.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- ***** Contact ***** -->
@@ -201,7 +198,7 @@
           me is via an email.
         </p>
         <!-- Replace the email with yours -->
-        <a href="mailto:you@example.com" class="btn">you@example.com</a>
+        <a href="pal.tenz@yahoo.com" class="btn">you@example.com</a>
       </div>
     </div>
   </section>
@@ -213,12 +210,12 @@
       <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
-          <a href="https://twitter.com/nisarhassan12/" title="Link to Twitter Profile">
+          <a href="https://twitter.com/tenzinngakpal/" title="Link to Twitter Profile">
             <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
           </a>
         </li>
         <li class="footer__social-link-item">
-          <a href="https://github.com/nisarhassan12/" title="Link to Github Profile">
+          <a href="https://github.com/tenzinngakpal/" title="Link to Github Profile">
             <img src="./images/github.svg" class="footer__social-image" alt="Github">
           </a>
         </li>
@@ -228,7 +225,7 @@
           </a>
         </li>
         <li class="footer__social-link-item">
-          <a href=https://www.linkedin.com/in/nisar-hassan-naqvi-413466199/">
+          <a href="https://www.linkedin.com/tenzinngakpal/">
             <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
           </a>
         </li>
