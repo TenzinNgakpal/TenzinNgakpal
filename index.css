@@ -437,70 +437,70 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Work ----- */
+/* ----- Education ----- */
 /* --------------------------------------- */
 
-.work__box {
+.edu__box {
     display: flex;
     align-items: center;
 }
 
 @media(max-width: 900px) {
-    .work__box {
+    .edu__box {
         align-items: initial;
         flex-direction: column-reverse;
     }
 }
 
-.work__box:not(:last-child) {
+.edu__box:not(:last-child) {
     margin-bottom: 25rem;
 }
 
 @media(max-width: 500px) {
-    .work__box:not(:last-child) {
+    .edu__box:not(:last-child) {
         margin-bottom: 20rem;
     }
 }
 
-.work__links {
+.edu__links {
     display: flex;
     align-items: center;
 }
 
-.work__text {
+.edu__text {
     flex: 0 0 30%;
 }
 
-.work__list {
+.edu__list {
     /* list-style-type: square; */
     list-style-position: inside;
     margin-bottom: var(--gutter-normal);
 }
 
-.work__code {
+.edu__code {
     display: block;
     height: 3rem;
     margin-left: var(--gutter-normal);
     transition: all .3s;
 }
 
-.work__code:hover {
+.edu__code:hover {
     transform: scale(1.2);
 }
 
-.work__image-box {
+.edu__image-box {
     margin-bottom: var(--gutter-normal);
 }
 
 @media(min-width: 901px) {
-    .work__image-box {
+    .edu__image-box {
         flex: 1;
         margin: 0 0 0 10rem;
     }
 }
 
 @media(max-width: 900px) {
-    .work__code {
+    .edu__code {
         height: 4rem;
     }
 }
