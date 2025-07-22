@@ -18,14 +18,23 @@
 
 <body>
     <nav class="navbar">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="./project-portfolio/">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="navbar__container">
+            <!-- <a href="#" class="navbar__logo">Tenzin Ngakpal</a> -->
+
+            <button class="navbar__toggle" id="navbarToggle" aria-label="Toggle navigation">
+                <span class="navbar__toggle-icon"></span>
+                <span class="navbar__toggle-icon"></span>
+                <span class="navbar__toggle-icon"></span>
+            </button>
+            <ul id="navbarMenu" class="navbar__menu"> 
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="./project-portfolio/">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <header class="hero">
@@ -86,7 +95,7 @@
                         <b>CGPA:</b> 7.27
                     </p>
                     <p>
-                        <b>2024 - Till Present</b>
+                        <b>2024 - 2025</b>
                         <br>
                         M. Tech - Computer Science and Engineering
                         <br>
@@ -184,7 +193,7 @@
                 </p>                  
             </div>
             <div class="section__image-content">
-                <img src="./images/coding.jpg" class="edu__image" alt="Lovely Campus" />
+                <img src="./images/coding.jpg" class="edu__image" alt="Coding Image" />
             </div>
         </div>
     </section>

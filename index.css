@@ -7,20 +7,20 @@
     font-family: 'Bookman Old Style';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/bookman-old-style.ttf') format('woff');
+    src: url('./fonts/bookman-old-style.ttf') format('woff'); /* Consider woff2 for better performance */
 }
 
 @font-face {
     font-family: 'Book Antiqua';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/book-antiqua.ttf') format('woff');
+    src: url('./fonts/book-antiqua.ttf') format('woff'); /* Consider woff2 for better performance */
 }
 
 html {
-  height: 100%;
+  height: 100%; /* Important for full height sections */
   scroll-behavior: smooth;
-  overflow-y: scroll;
+  overflow-y: scroll; /* Fine if you intend this specific scroll behavior */
   scroll-snap-type: y mandatory;
   scroll-padding-top: 64px;
 }
@@ -45,12 +45,37 @@ body {
   margin: 0;
   z-index: 10;
   box-sizing: border-box;
-  border-radius: 12px;
+  /* Removed border-radius here as it's full width */
+
+  /* NEW: For desktop, align items for default view */
+  display: flex; /* Added for the navbar itself */
+  justify-content: center; /* Center the container inside the navbar */
+  align-items: center;
 }
 
-.navbar ul {
+/* NEW: Container for logo and toggle on mobile, and menu on desktop */
+.navbar__container {
+    display: flex;
+    justify-content: space-between; /* Space between logo/toggle and menu */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Constrain width like other sections */
+    margin: 0 auto; /* Center the container */
+}
+
+/* NEW: Logo/Brand Styling */
+.navbar__logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-right: auto; /* Pushes the menu to the right */
+}
+
+/* CRITICAL FIX: Changed from .navbar ul to .navbar__menu */
+.navbar__menu { 
   list-style: none;
-  display: flex;
+  display: flex; /* Default for desktop */
   justify-content: flex-end;
   gap: 2rem;
   margin: 0;
@@ -61,11 +86,46 @@ body {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  padding: 0.5rem 1rem; /* Added padding for clickable area */
+  transition: color 0.3s ease; /* Smooth transition on hover */
+}
+.navbar a:hover {
+    color: #00A3CC; /* Highlight color on hover */
+}
+
+/* Hamburger Toggle Button */
+.navbar__toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.navbar__toggle-icon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger icon animation for opening/closing */
+.navbar__toggle.open .navbar__toggle-icon:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.navbar__toggle.open .navbar__toggle-icon:nth-child(2) {
+    opacity: 0;
+}
+.navbar__toggle.open .navbar__toggle-icon:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Hero Banner */
 .hero {
-  height: 100vh;
+  min-height: 100vh; /* Changed from height to min-height for better mobile adaptability */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -74,7 +134,7 @@ body {
   padding-right: 10vw;
   box-sizing: border-box;
   color: #fff;
-  padding-top: 64px;
+  padding-top: 64px; /* Ensure content starts below fixed navbar */
 
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -85,7 +145,7 @@ body {
 
 .hero h1 {
   padding-left: 1%;
-  font-size: 5rem;
+  font-size: 5rem; /* Will be adjusted in media queries */
   font-weight: 400;
   margin-bottom: 0.2em;
   text-align: left;
@@ -94,11 +154,11 @@ body {
 
 .hero p {
   padding-left: 1%;
-  font-size: 2rem;
+  font-size: 2rem; /* Will be adjusted in media queries */
   color: #e0e0e0;
   margin-bottom: 2.5rem;
   line-height: 1.4;
-  max-width: 60%;
+  max-width: 60%; /* Will be adjusted in media queries */
   text-align: left;
 }
 
@@ -116,7 +176,7 @@ body {
 h1, h2, h3 {
   color: #0056B3;
   font-family:'Times New Roman', Times, serif;
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* Will be adjusted in media queries */
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -130,6 +190,7 @@ h1, h2, h3 {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  transition: all 0.2s ease-in-out; /* Added for smoother transition */
 }
 
 .cta:hover {
@@ -146,8 +207,7 @@ section {
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 12px;
 
-  height: 100vh;
-
+  min-height: 100vh; /* Changed from height to min-height for better mobile adaptability */
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -160,12 +220,12 @@ section {
 
 .section__content-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Default for desktop */
   align-items: center;
   justify-content: space-around;
   width: 100%;
   max-width: 1000px;
-  gap: 3rem;
+  gap: 3rem; /* Will be adjusted in media queries */
   flex-wrap: wrap;
 
   flex-grow: 1;
@@ -175,14 +235,14 @@ section {
 .section__text-content {
   font-family: 'Book Antiqua', serif;
   flex: 1;
-  min-width: 300px;
+  min-width: 300px; /* **CRITICAL POINT: This needs to be unset on smaller screens** */
   padding: 1rem;
   text-align: justify;
 }
 
 .section__image-content {
   flex: 1;
-  min-width: 300px;
+  min-width: 300px; /* **CRITICAL POINT: This needs to be unset on smaller screens** */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,7 +257,7 @@ section {
 }
 
 .edu__image {
-  min-width: 500px;
+  min-width: 500px; /* **CRITICAL POINT: This needs to be unset on smaller screens** */
   max-width: 100%;
   height: auto;
   border-radius: 8px;
@@ -208,11 +268,11 @@ section {
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1rem; /* Will be adjusted in media queries */
   padding: 0;
   margin: 1.5rem 0;
   list-style: none;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Will be adjusted in media queries */
 }
 
 /* --- INDIVIDUAL SKILL TAGS --- */
@@ -250,11 +310,10 @@ section {
 
 /* Contact Section (should not have two columns) */
 .contact {
-    padding-top: 64px;
+    padding-top: 64px; /* Ensure content starts below fixed navbar */
     scroll-snap-align: start;
     scroll-snap-stop: always;
 }
-
 
 .footer {
   background-color: rgba(0, 0, 0, 0.9);
@@ -332,7 +391,7 @@ section {
 
 /* General Link and Button Styles (from your original code) */
 a {
-    color: var(--white);
+    color: #fff; /* Replaced var(--white) with direct hex code */
     font-weight: 400;
     font-family: 'Book Antiqua', serif;
     transition: all .2s;
@@ -345,7 +404,7 @@ a {
 
 button:focus,
 a:focus {
-    outline: 2px solid var(--blue);
+    outline: 2px solid #0056B3; /* Replaced var(--blue) with direct hex code */
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -354,7 +413,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link:hover {
-    color: var(--blue);
+    color: #0056B3; /* Replaced var(--blue) with direct hex code */
 }
 
 /* Button */
@@ -364,13 +423,14 @@ body:not(.user-is-tabbing) a:focus {
     padding: 1rem 2rem;
     text-decoration: none;
     color: inherit;
-    border: 1px solid var(--dark-techno-blue-primary); /* Assuming you're using the new color scheme variables */
+    border: 1px solid transparent; /* Changed to transparent as you have a background color */
     font-weight: 400;
     background-color: #0056B3; /* Your chosen blue */
     border-radius: 12px;
     z-index: 1;
     margin: 1rem auto; /* Added for centering. Adjust top/bottom margin as needed. */
     width: fit-content; /* Ensures the block element only takes up the width of its content */
+    transition: all 0.2s ease-in-out; /* Added for smoother transition */
 }
 
 .btn:hover {
@@ -379,7 +439,6 @@ body:not(.user-is-tabbing) a:focus {
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
-
 
 .btn:focus {
     outline: none;
@@ -392,7 +451,7 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     left: 0;
     right: 100%;
-    background: var(--white);
+    background: #fff; /* Replaced var(--white) with direct hex code */
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
@@ -401,11 +460,11 @@ body:not(.user-is-tabbing) a:focus {
 .btn:hover::after,
 .btn:focus::after {
     right: 0;
-    background: var(--blue);
+    background: #0056B3; /* Replaced var(--blue) with direct hex code */
 }
 
 .btn--blue {
-    background: var(--blue);
+    background: #0056B3; /* Replaced var(--blue) with direct hex code */
     transition: all 0.2s;
 }
 
@@ -424,7 +483,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: .6rem;
     color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid var(--blue);
+    border-bottom: 1px solid #0056B3; /* Replaced var(--blue) with direct hex code */
 }
 
 .link__text::after {
@@ -434,7 +493,7 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     left: 0;
     right: 100%;
-    background: var(--white);
+    background: #fff; /* Replaced var(--white) with direct hex code */
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
@@ -447,7 +506,7 @@ body:not(.user-is-tabbing) a:focus {
 .link__text:hover::after,
 .link__text:focus:after {
     right: 0;
-    background: var(--blue);
+    background: #0056B3; /* Replaced var(--blue) with direct hex code */
 }
 
 .link__text span {
@@ -456,34 +515,195 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* Media Queries for Responsiveness */
+
+/* General adjustments for screens smaller than 1024px (Laptops, large tablets) */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 4rem; /* Slightly smaller for larger tablets/laptops */
+    }
+    .hero p {
+        font-size: 1.8rem;
+    }
+    section {
+        padding: 1.5rem; /* Reduce padding slightly */
+        max-width: 95%; /* Take more width */
+    }
+    .section__content-wrapper {
+        gap: 2rem; /* Reduce gap */
+    }
+}
+
+/* Main Mobile Breakpoint: for screens smaller than 768px (Tablets portrait, Phones) */
 @media (max-width: 768px) {
-  .section__content-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
+    /* Navbar Adjustments */
+    .navbar {
+        padding: 1rem; /* Smaller padding for fixed navbar */
+        border-radius: 0; /* Remove border-radius on fixed full-width navbar */
+        justify-content: space-between; /* Logo left, toggle right */
+    }
 
-  .section__text-content,
-  .section__image-content {
-    min-width: unset;
-    width: 100%;
-    text-align: center;
-  }
+    /* CRITICAL FIX: Menu specific adjustments for mobile */
+    .navbar__menu {
+        display: none; /* Crucial: Hidden by default on mobile */
+        flex-direction: column; /* Stack nav items vertically */
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Position below the navbar */
+        left: 0;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem 0;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* For animation */
+        transform: translateY(-10px); /* Start slightly off-screen for animation */
+        opacity: 0; /* Start invisible for animation */
+        pointer-events: none; /* Prevent clicks when hidden */
+    }
 
-  .skills-list {
-    justify-content: center;
-  }
+    /* When menu is active (toggled by JS) */
+    .navbar__menu.active {
+        display: flex; /* Crucial: This shows it */
+        transform: translateY(0); /* Animate into view */
+        opacity: 1; /* Animate into view */
+        pointer-events: auto; /* Allow clicks when visible */
+    }
 
-  .hero h1 {
-    font-size: 3.5rem;
-  }
+    /* CRITICAL FIX: Ensure list items take full width and center text */
+    .navbar__menu li { 
+        width: 100%;
+        text-align: center;
+    }
 
-  .hero p {
-    font-size: 1.1rem;
-    max-width: 90%;
-  }
+    .navbar a {
+        padding: 0.8rem 0; /* More padding for easier tapping */
+        width: 100%; /* Make links take full width of list item */
+        display: block; /* Make links block level for full width */
+    }
 
-  .hero {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
+    /* Show the hamburger toggle button */
+    .navbar__toggle {
+        display: block;
+    }
+
+    /* Adjust navbar logo on mobile */
+    .navbar__logo {
+        margin-right: 0; /* Remove auto margin */
+        padding-left: 0.5rem; /* Add a little left padding */
+    }
+
+    /* Hero Section Adjustments */
+    .hero {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        text-align: center; /* Center content in hero */
+        align-items: center; /* Center content horizontally */
+    }
+    .hero h1 {
+        font-size: 2.8rem; /* Significantly smaller for phones */
+        padding-left: 0; /* Remove left padding */
+        text-align: center; /* Center heading */
+    }
+    .hero p {
+        font-size: 1.1rem; /* Smaller paragraph text */
+        max-width: 100%; /* Allow paragraph to take full width */
+        padding-left: 0; /* Remove left padding */
+        text-align: center; /* Center paragraph */
+        margin-bottom: 1.5rem; /* Adjust margin */
+    }
+    .profile-pic { /* If you want to adjust profile pic size on mobile */
+        width: 120px;
+        height: 120px;
+        margin-bottom: 0.5rem;
+    }
+
+    /* General Section Adjustments */
+    section {
+        padding: 1rem; /* Reduced padding for sections */
+        max-width: 95%; /* Allow sections to take more width */
+        margin: 1rem auto; /* Adjust margin between sections */
+        /* If content in sections becomes too tall due to flex-direction: column,
+           you might need to remove height: 100vh or min-height: 100vh here
+           and let content define height, or make it min-height: unset; */
+    }
+
+    /* Two-Column Layout (section__content-wrapper) */
+    .section__content-wrapper {
+        flex-direction: column; /* Stack text and image vertically */
+        align-items: center; /* Center items when stacked */
+        gap: 1.5rem; /* Reduced gap between stacked content */
+    }
+
+    .section__text-content,
+    .section__image-content {
+        min-width: unset; /* **CRITICAL FIX: Remove fixed minimum width** */
+        width: 100%; /* Allow them to take full width */
+        padding: 0.5rem; /* Adjust padding */
+        text-align: justify; /* Maintain justify for text */
+    }
+
+    /* Specific Image Adjustments */
+    .section__image {
+        max-width: 100%; /* Already good */
+        height: auto;
+    }
+    .edu__image {
+        min-width: unset; /* **CRITICAL FIX: Remove fixed minimum width for education images** */
+        max-width: 100%; /* Already good */
+        height: auto;
+    }
+
+    /* Skills List Adjustments */
+    .skills-list {
+        justify-content: center; /* Center skill tags */
+        gap: 0.8rem; /* Slightly smaller gap */
+        margin: 1rem 0; /* Adjust margin */
+    }
+    .skills-list li {
+        font-size: 0.9rem; /* Smaller font size for skill tags */
+        padding: 0.6em 1em; /* Adjust padding */
+    }
+
+    /* Footer Adjustments */
+    .footer {
+        padding: 2rem 0;
+    }
+    .footer .row {
+        padding: 0 1rem; /* Reduce horizontal padding */
+    }
+    .footer__social-links {
+        gap: 1rem; /* Reduce gap between social icons */
+    }
+    .footer__social-image {
+        width: 28px; /* Slightly smaller icons */
+        height: 28px;
+    }
+    .footer p {
+        font-size: 0.8rem; /* Smaller footer text */
+    }
+
+    /* Back to Top button */
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+    .back-to-top__image {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* General H1, H2, H3 adjustments */
+    h1, h2, h3 {
+        font-size: 2rem; /* Adjusted for mobile */
+        margin-bottom: 0.8rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
 }
