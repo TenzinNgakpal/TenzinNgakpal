@@ -1,263 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
 
-  <!-- Put your site title here -->
-  <title>
-    Tenzin Ngakpal's Portfolio.
-  </title>
+    <title>
+        Tenzin Ngakpal's Portfolio.
+    </title>
 
-  <meta name="description" content="A post graduate who is interested in the fields of Cyber Security and Devops.">
-  <!-- Coding Keywords for metadata -->
-  <meta name="keywords" content="React, C/C++, Python, Rust" />
-  <link rel="stylesheet" href="index.css" />
+    <meta name="description" content="A post graduate who is interested in the fields of Cyber Security and Devops.">
+    <meta name="keywords" content="React, C/C++, Python, Rust" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="index.js" defer></script>
 </head>
 
 <body>
-
-  <!-- ***** Header ***** -->
-
-  <header class="header" role="banner" id="top">
-    <div class="row">
-      <nav class="nav" role="navigation">
-        <ul class="nav__items">
-          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
-          <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
-          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-<!--      <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>  -->
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="./project-portfolio/">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
-    </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <h1 class="heading-primary">
-          <!-- Replace the following name with your name -->
-          <span>Tenzin Ngakpal</span>
-        </h1>
-        <!-- Put a small paragraph about yourself -->
+    </nav>
+
+    <header class="hero">
+        <h1>Tenzin Ngakpal</h1>
         <p>A Post Graduate from Lovely Professional University, Phagwara.</p>
-        <a href="#contact" class="btn btn--pink">Get in touch!</a>
-      </div>
-    </div>
-  </header>
+        <a href="#contact" class="cta">Get in touch!</a>
+    </header>
 
-  <main role="main">
-
-    <!-- ***** About ***** -->
-    <section class="about" id="about">
-        <div class="row">
-            <h2>About Me</h2>
-            <div class="about__content">
-                <div class="about__text">
-                <!-- Replace the below paragraph with info about yourself -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="section__content-wrapper">
+            <div class="section__image-content">
+                <img src="./images/profile.png" alt="Tenzin Ngakpal" class="section__image" />
+            </div>
+            <div class="section__text-content">
                 <p>
                     I am a Computer Science post graduate of Lovely Professional University with interest in the fields of programming and Devops. 
-                    A cyber security enthusiast who keeps up with the latest developments in the cyberspace.
-                    Also delving into the world of coding with C/C++, Python, React and Rust.
+                    A cyber security enthusiast who keeps up with the latest developments in the cyberspace. 
+                    Also delving into the world of coding with C/C++, Python, React and Rust. 
                     Always willing to learn and develop his skills.
                 </p>
-                <!-- Provide a link to your resume -->
-                <a href="./Documents/Resume.pdf" class="btn" target="_blank">My Resume</a>
-                </div>
-
-                <div class="about__photo-container">
-                <!-- Add a nice photo of yourself -->
-                <img class="about__photo" src="./images/tenzin-ngakpal.jpg" alt="" />
-                </div>
-            </div>
+                <br>
+                <a href="./documents/Resume.pdf" class="btn" target="_blank">My Resume</a>
+            </div>  
         </div>
     </section>
 
-    <!-- ***** Education ***** -->
-    <section class="education" id="education">
-      <div class="row">
+    <section id="education">
         <h2>Education</h2>
-        <div class="edu__boxes">
-          <!-- Each div with the edu__box class is a project. -->
-          <div class="edu__box">
-            <div class="edu__text">
-              <h3>Where I've Learned</h3>
-              <ul class="edu__list">
-                <p>
-                  <h4>2016-2017</h4>
-                  <h5>Senior Secondary - Xth</h5>
-                  Tibetan Homes School - Mussoorie, Uttarakhand
-                  <h6>CGPA: 8.60</h6>
-                </p>
-                <p>
-                  <h4>2018-2019</h4>
-                  <h5>Senior Secondary - XIIth</h5>
-                  Tibetan Homes School - Mussoorie, Uttarakhand
-                  <h6>CGPA: 7.01</h6>
-                </p>
-                <p>
-                  <h4>2019-2023</h4>
-                  <h5>Bachelor of Technology in Computer Science and Engineering</h5>
-                  Lovely Professional University - Phagwara, Punjab
-                  <h6>CGPA: 7.27</h6>
-                </p>
-            </div>
-
-            <div class="edu__image-box">
-              <img src="./images/lpu.jpg" class="edu__image" alt="Lovely Campus" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ***** Experience ***** -->
-    <section class="experience" id="experience">
-      <div class="row">
-          <h2>Internships, Workshops and Work Experience</h2>
-          <div class="about__content">
-              <div class="about__text">
-                <ul class="edu__list">
-                  <p>
-                    <h4>Workshops</h4>
-                    <li><a href="./Documents/CoPTaEH.pdf" title="Certificate for Completion of Course Linked" target="_blank">Penetration Testing and Ethical Hacking - Cybrary</a></li>
-                    <li><a href="./Documents/CoOPT.pdf" title="Certificate for Completion of Course Linked" target="_blank">Offensive Penetration Testing - Cybrary</a></li>
-                  </p>
-                  <p>
-                    <h4>Internships</h4>
-                    <li>
-                      Wiseyak Inc. - ML Intern - <a href="./Documents/WYEL.pdf" target="_blank">Experience Letter</a>
-                    </li>
-                  </p>
-                  <p>
-                    <h4>Work Experience</h4>
-                    <li>
-                      THF Mussoorie - Computer Software Technician (Volunteer Work) - <a href="./Documents/THFEL.pdf" target="_blank">Experience Letter</a>
-                    </li>
-                  </p>
+        <div class="section__content-wrapper">
+            <div class="section__text-content">
+                <ul>
+                    <p>
+                        <b>2016 - 2017</b>
+                        <br>
+                        Senior Secondary - Xth
+                        <br>
+                        Tibetan Homes School - Mussoorie, Uttarakhand
+                        <br>
+                        <b>CGPA:</b> 8.60
+                    </p>
+                    <p>
+                        <b>2018 - 2019</b>
+                        <br>
+                        Senior Secondary - XIIth
+                        <br>
+                        Tibetan Homes School - Mussoorie, Uttarakhand
+                        <br>
+                        <b>CGPA:</b> 7.01
+                    </p>
+                    <p>
+                        <b>2019 - 2023</b>
+                        <br>
+                        B. Tech - Computer Science and Engineering
+                        <br>
+                        Lovely Professional University - Phagwara, Punjab
+                        <br>
+                        <b>CGPA:</b> 7.27
+                    </p>
+                    <p>
+                        <b>2024 - 2025</b>
+                        <br>
+                        M. Tech - Computer Science and Engineering
+                        <br>
+                        Lovely Professional University - Phagwara, Punjab
+                        <br>
+                        <b>CGPA:</b> 7.52
+                    </p>
                 </ul>
-              </div>
-
-                <div class="about__photo-container">
-                <!-- Add a nice photo of yourself -->
-                  <img class="about__photo" src="./images/internship.jpg" alt="" />
-                </div>
-              </div>
-          </div>
-    </section>
-
-    <!-- ***** Skills ***** -->
-    <section class="skills" id="skills">
-      <div class="row">
-        <h2>Skills</h2>
-        <div class="edu__boxes">
-          <!-- Each div with the edu__box class is a project. -->
-          <div class="edu__box">
-            <div class="edu__text">
-              <h3>I Am Proficient In</h3>
-              <ul class="edu__list">
-                <p>
-                  <h4>Technical Skills:</h4>
-                  <li>C/C++</li>
-                  <li>Python</li>
-                  <li>Rust</li>
-                  <li>React</li>
-                </p>
-                <p>
-                  <h4>Personal Skills:</h4>
-                  <li>Problem Solving</li>
-                  <li>Adaptability</li>
-                  <li>Collaboration</li>
-                  <li>Time Management</li>
-                </p>
-                <p>
-                  <h4>Tools Proficiency:</h4>
-                  <li>MS Office Tools</li>
-                  <li>Virtual Box</li>
-                  <li>Visual Studio Code</li>
-                </p>
-                <p>
-                  <h4>Operating Systems:</h4>
-                  <li>Windows</li>
-                  <li>Ubuntu</li>
-                  <li>Kali Linux</li>
-                </p>
             </div>
-
-            <div class="edu__image-box">
-              <img src="./images/coding.jpg" class="edu__image" alt="Lovely Campus" />
+            <div class="section__image-content">
+                <img src="./images/lpu.jpg" class="edu__image" alt="Lovely Campus" />
             </div>
-          </div>
-    </section>
-
-    <!-- ***** Projects ***** 
-    <section class="projects" id="projects">
-      <div class="row">
-        <h2>Projects</h2>
-        <div class="project__logos">
-          <img src="./images/ronjones.png" class="project__logo" alt="Company 2" />
-          <img src="./images/goldengrid.png" class="project__logo" alt="Company 3" />
-          <img src="./images/bullseye.png" class="project__logo" alt="Company 1" />
-          <img src="./images/mighty-furnitures.png" class="project__logo" alt="Company 1" />
-          <img src="./images/fastlane.png" class="project__logo" alt="Company 3" />
-          <img src="./images/chippy.png" class="project__logo" alt="Company 1" />
         </div>
-      </div>
     </section>
--->
 
-</main>
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="section__content-wrapper">
+            <div class="section__text-content">
+                <ul>
+                    <p>
+                        <b>Workshops</b>
+                        <li><a href="./documents/CoPTaEH.pdf" title="Certificate for Completion of Course Linked" target="_blank">Penetration Testing and Ethical Hacking - Cybrary</a></li>
+                        <br>
+                        <li><a href="./documents/CoOPT.pdf" title="Certificate for Completion of Course Linked" target="_blank">Offensive Penetration Testing - Cybrary</a></li>
+                    </p>
+                    <br>
+                    <p>
+                        <b>Internships</b>
+                        <li>
+                            Wiseyak Inc.
+                            <br>
+                            <i>ML Intern</i>
+                            <br>
+                            <a href="./documents/WYEL.pdf" target="_blank">Experience Letter</a>
+                        </li>
+                    </p>
+                    <br>
+                    <p>
+                        <b>Work Experience</b>
+                        <li>
+                            Tibetan Homes Foundation, Mussoorie
+                            <br>
+                            <i>Computer Software Technician (Volunteer Work)</i>
+                            <br>
+                            <a href="./documents/THFEL.pdf" target="_blank">Experience Letter</a>
+                        </li>
+                    </p>
+                </ul>
+            </div>
+            <div class="section__image-content">
+                <img class="section__image" src="./images/internship.jpg" alt="Experience Image" />
+            </div>
+        </div>
+    </section>
 
-  <!-- ***** Contact ***** -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="section__content-wrapper">
+            <div class="section__text-content">
+                <p>
+                    <b>Technical Skills</b>
+                    <ul class="skills-list">
+                        <li>C/C++</li>
+                        <li>Python</li>
+                        <li>Rust</li>
+                        <li>React</li>
+                    </ul>
+                </p>
+                <p>
+                    <b>Personal Skills</b>
+                    <ul class="skills-list">
+                        <li>Problem Solving</li>
+                        <li>Adaptability</li>
+                        <li>Collaboration</li>
+                        <li>Time Management</li>
+                    </ul>
+                </p>  
+                <p>
+                    <b>Tools Proficiency</b>
+                    <ul class="skills-list">
+                        <li>MS Office</li>
+                        <li>Virtual Box</li>
+                        <li>Visual Studio Code</li>
+                        <li>Docker</li>
+                    </ul>
+                </p>  
+                <p>
+                    <b>Operating Systems</b>
+                    <ul class="skills-list">
+                        <li>Windows</li>
+                        <li>Linux</li>
+                        <li>Kali-Linux</li>
+                    </ul>
+                </p>                  
+            </div>
+            <div class="section__image-content">
+                <img src="./images/coding.jpg" class="edu__image" alt="Lovely Campus" />
+            </div>
+        </div>
+    </section>
 
-  <section class="contact" id="contact">
-    <div class="row">
-      <h2>Get in Touch</h2>
-      <div class="contact__info">
-        <p>
-          You can contact me on the following email address.
-        </p>
-        <!-- Replace the email with yours -->
-        <a href="mailto:tngakpal@gmail.com" class="btn">Gmail Account</a>
-      </div>
-    </div>
-  </section>
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <div class="row">
+            <div class="contact__info">
+                <p>
+                    You can contact me on the following email address.
+                </p>
+            <a href="mailto:tngakpal@gmail.com" class="btn">Gmail Account</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- ***** Footer ***** -->
+    <footer role="contentinfo" class="footer">
+        <div class="row">
+            <ul class="footer__social-links">
+                <li class="footer__social-link-item">
+                    <a href="https://github.com/TenzinNgakpal" title="Link to Github Profile" target="_blank">
+                        <img src="./images/github.svg" class="footer__social-image" alt="Github">
+                    </a>
+                </li>
+                <li class="footer__social-link-item">
+                    <a href="https://leetcode.com/u/Tngakpal" title="Link to LeetCode Profile" target="_blank">
+                        <img src="./images/leetcode.svg" class="footer__social-image" alt="Leetcode">
+                    </a>
+                </li>
+                <li class="footer__social-link-item">
+                    <a href="https://www.linkedin.com/in/ngakpal/" target="_blank">
+                        <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
-  <footer role="contentinfo" class="footer">
-    <div class="row">
-      <!-- Update the links to point to your accounts -->
-      <ul class="footer__social-links">
-        <!--<li class="footer__social-link-item">
-          <a href="https://twitter.com/tenzinngakpal/" title="Link to Twitter Profile" target="_blank">
-            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
-          </a>
-        </li>-->
-        <li class="footer__social-link-item">
-          <a href="https://github.com/TenzinNgakpal" title="Link to Github Profile" target="_blank">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
-          </a>
-        </li>
-        <li class="footer__social-link-item">
-          <a href="https://leetcode.com/u/Tngakpal" title="Link to LeetCode Profile" target="_blank">
-            <img src="./images/leetcode.svg" class="footer__social-image" alt="Leetcode">
-          </a>
-        </li>
-        <li class="footer__social-link-item">
-          <a href="https://www.linkedin.com/in/ngakpal/" target="_blank">
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
-  </a>
-  <script src="./index.js"></script>
+    <a href="#top" class="back-to-top" title="Back to Top">
+        <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+    </a>
+    
 </body>
-
 </html>

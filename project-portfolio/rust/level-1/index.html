@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rust - Level 1 Projects</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="../../index.html">🏠 Home</a>
+    </div>
+
+    <div class="navbar-center">
+      <h3>Level-1</h3>
+    </div>
+
+    <div class="navbar-right">
+      <a href="../index.html">← Back to Rust</a>
+    </div>
+  </nav>
+
+  <h1>Level 1 Rust Projects</h1>
+  <p>Beginner-friendly CLI projects built in Rust.</p>
+
+  <div id="project-grid" class="project-grid">
+    <!-- Cards will be dynamically inserted here -->
+  </div>
+
+  <!-- Load the projects data -->
+  <script src="projects.js"></script>
+
+  <!-- Render the cards -->
+  <script>
+    const grid = document.getElementById('project-grid');
+    projects.forEach(project => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h2><a href="${project.url}" target="_blank">${project.name}</a></h2>
+        <p>${project.description}</p>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+
+
+</body>
+</html>
