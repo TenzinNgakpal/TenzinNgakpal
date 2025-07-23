@@ -5,21 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
         element.addEventListener('click', function(event) {
             const href = this.getAttribute('href');
             if (!href || !href.startsWith('#')) {
-                // If it's not an internal hash link (e.g., external link like Projects),
-                // or if href is null/empty, let default behavior happen.
-                // For internal hash links, prevent default to handle custom scroll/hash logic.
                 if (href && href.startsWith('./project-portfolio/')) {
-                    // Allow external project link to navigate normally
                     return; 
                 }
-                event.preventDefault(); // Prevent default for internal hash links to use smooth scroll
+                event.preventDefault();
             }
             
             const targetId = href.substring(1);
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
-                // If it's a link within the navbar menu and the menu is open, close it
                 const navbarMenu = document.getElementById('navbarMenu');
                 const navbarToggle = document.getElementById('navbarToggle');
 
@@ -28,10 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     navbarToggle.classList.remove('open'); 
                 }
                 
-                // For smooth scrolling to sections
                 if (href.startsWith('#')) {
-                    event.preventDefault(); // Prevent default jump
-                    const offsetTop = targetSection.getBoundingClientRect().top + window.scrollY - 64; // Adjust for fixed navbar height
+                    event.preventDefault();
+                    const offsetTop = targetSection.getBoundingClientRect().top + window.scrollY - 64;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -41,17 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Optional: Clean up hash from URL after page load/scroll (improves aesthetics)
+    // Clean Up URL
     window.addEventListener('load', function() {
         if (window.location.hash) {
             setTimeout(() => {
-                // Use history.replaceState to remove the hash without adding to browser history
                 history.replaceState(null, '', window.location.pathname + window.location.search);
-            }, 300); // Small delay to allow initial scroll to complete if applicable
+            }, 300);
         }
     });
 
-    // Hamburger menu toggle logic
+    // Hamburger Menu
     const navbarToggle = document.getElementById('navbarToggle');
     const navbarMenu = document.getElementById('navbarMenu');
 
@@ -62,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close mobile menu when clicking outside of it (optional but good UX)
+    // Close Mobile Menu
     document.addEventListener('click', function(event) {
         const isClickInsideNavbar = navbarMenu.contains(event.target) || navbarToggle.contains(event.target);
         

@@ -7,20 +7,20 @@
     font-family: 'Bookman Old Style';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/bookman-old-style.ttf') format('woff'); /* Consider woff2 for better performance */
+    src: url('./fonts/bookman-old-style.ttf') format('woff2'); 
 }
 
 @font-face {
     font-family: 'Book Antiqua';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/book-antiqua.ttf') format('woff'); /* Consider woff2 for better performance */
+    src: url('./fonts/book-antiqua.ttf') format('woff2');
 }
 
 html {
-  height: 100%; /* Important for full height sections */
+  height: 100%;
   scroll-behavior: smooth;
-  overflow-y: scroll; /* Fine if you intend this specific scroll behavior */
+  overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-padding-top: 64px;
 }
@@ -37,7 +37,7 @@ body {
 
 /* Navigation Bar */
 .navbar {
-  background: rgba(0, 0, 0, 1);
+  background: rgba(10, 10, 10, 0.8);
   padding: 1.5rem;
   position: fixed;
   top: 0;
@@ -45,35 +45,31 @@ body {
   margin: 0;
   z-index: 10;
   box-sizing: border-box;
-
   display: flex;
-  justify-content: center; /* Center the container inside the navbar */
+  justify-content: center;
   align-items: center;
 }
 
-/* NEW: Container for logo and toggle on mobile, and menu on desktop */
 .navbar__container {
     display: flex;
-    justify-content: space-between; /* Space between logo/toggle and menu */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Constrain width like other sections */
-    margin: 0 auto; /* Center the container */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* NEW: Logo/Brand Styling */
 .navbar__logo {
     font-size: 1.8rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
-    margin-right: auto; /* Pushes the menu to the right */
+    margin-right: auto;
 }
 
-/* CRITICAL FIX: Changed from .navbar ul to .navbar__menu */
 .navbar__menu { 
   list-style: none;
-  display: flex; /* Default for desktop */
+  display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
   margin: 0;
@@ -82,29 +78,33 @@ body {
 }
 
 .navbar a {
-  text-decoration: none;
+  text-decoration: none;  
+  background-color: #0056B3;
   color: white;
   font-weight: bold;
-  padding: 0.5rem 1rem; /* Added padding for clickable area */
-  transition: color 0.3s ease; /* Smooth transition on hover */
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
   border-radius: 12px;
-  background-color: #292929;
   display: inline-block;
-  min-width: 100px; /* Adjust this value as needed to fit your longest link text comfortably */
-  text-align: center; /* Center the text within the min-width box */
+  min-width: 100px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
 }
+
 .navbar a:hover {
-    color: #00A3CC; /* Highlight color on hover */
+    background-color: #00A3CC;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* Hamburger Toggle Button */
 .navbar__toggle {
-    display: none; /* Hidden by default on desktop */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1000;
 }
 
 .navbar__toggle-icon {
@@ -116,7 +116,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Hamburger icon animation for opening/closing */
+/* Hamburger Menu Icon Animation */
 .navbar__toggle.open .navbar__toggle-icon:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -129,7 +129,7 @@ body {
 
 /* Hero Banner */
 .hero {
-  min-height: 100vh; /* Changed from height to min-height for better mobile adaptability */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -138,7 +138,7 @@ body {
   padding-right: 10vw;
   box-sizing: border-box;
   color: #fff;
-  padding-top: 64px; /* Ensure content starts below fixed navbar */
+  padding-top: 64px;
 
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -149,7 +149,7 @@ body {
 
 .hero h1 {
   padding-left: 1%;
-  font-size: 5rem; /* Will be adjusted in media queries */
+  font-size: 5rem;
   font-weight: 400;
   margin-bottom: 0.2em;
   text-align: left;
@@ -158,15 +158,14 @@ body {
 
 .hero p {
   padding-left: 1%;
-  font-size: 2rem; /* Will be adjusted in media queries */
+  font-size: 2rem;
   color: #e0e0e0;
   margin-bottom: 2.5rem;
   line-height: 1.4;
-  max-width: 60%; /* Will be adjusted in media queries */
+  max-width: 60%;
   text-align: left;
 }
 
-/* Existing profile-pic (if it's not in hero anymore, this can be moved) */
 .profile-pic {
   width: 160px;
   height: 160px;
@@ -180,7 +179,7 @@ body {
 h1, h2, h3 {
   color: #0056B3;
   font-family:'Times New Roman', Times, serif;
-  font-size: 2.5rem; /* Will be adjusted in media queries */
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -194,24 +193,24 @@ h1, h2, h3 {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: all 0.2s ease-in-out; /* Added for smoother transition */
+  transition: all 0.2s ease-in-out;
 }
 
 .cta:hover {
   background-color: #00A3CC;
-  color: black;
+  color: white;
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Section CSS (MODIFIED FOR TWO-COLUMN LAYOUT AND FULL HEIGHT) */
+/* Section CSS */
 section {
   max-width: 90%;
   margin: 2rem auto;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 12px;
 
-  min-height: 100vh; /* Changed from height to min-height for better mobile adaptability */
+  min-height: 100vh;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -224,12 +223,12 @@ section {
 
 .section__content-wrapper {
   display: flex;
-  flex-direction: row; /* Default for desktop */
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   max-width: 1000px;
-  gap: 3rem; /* Will be adjusted in media queries */
+  gap: 3rem;
   flex-wrap: wrap;
 
   flex-grow: 1;
@@ -239,14 +238,14 @@ section {
 .section__text-content {
   font-family: 'Book Antiqua', serif;
   flex: 1;
-  min-width: 300px; /* **CRITICAL POINT: This needs to be unset on smaller screens** */
+  min-width: 300px;
   padding: 1rem;
   text-align: justify;
 }
 
 .section__image-content {
   flex: 1;
-  min-width: 300px; /* **CRITICAL POINT: This needs to be unset on smaller screens** */
+  min-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -261,25 +260,24 @@ section {
 }
 
 .edu__image {
-  min-width: 500px; /* **CRITICAL POINT: This needs to be unset on smaller screens** */
+  min-width: 500px;
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Styles specific to skills-list */
+/* Skills List */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem; /* Will be adjusted in media queries */
+  gap: 1rem;
   padding: 0;
   margin: 1.5rem 0;
   list-style: none;
-  justify-content: flex-start; /* Will be adjusted in media queries */
+  justify-content: flex-start;
 }
 
-/* --- INDIVIDUAL SKILL TAGS --- */
 .skills-list li {
   background-color: #292929;
   color: #e0e0e0;
@@ -295,7 +293,6 @@ section {
   transition: all 0.2s ease-in-out;
 }
 
-/* Styles for the icon inside the li (assuming an <i> tag for Font Awesome) */
 .skills-list li i {
   font-size: 1.2em;
   color: #00A3CC ;
@@ -312,9 +309,9 @@ section {
   color: black;
 }
 
-/* Contact Section (should not have two columns) */
+/* Contact Section */
 .contact {
-    padding-top: 64px; /* Ensure content starts below fixed navbar */
+    padding-top: 64px;
     scroll-snap-align: start;
     scroll-snap-stop: always;
 }
@@ -329,7 +326,7 @@ section {
   scroll-snap-stop: always;
 }
 
-/* Row class (assuming it's a general utility for content centering) */
+/* Footer Row */
 .footer .row {
   max-width: 1200px;
   margin: 0 auto;
@@ -363,7 +360,7 @@ section {
   margin-top: 1rem;
 }
 
-/* BACK TO TOP BUTTON */
+/* "Back To Top" Button */
 .back-to-top {
   position: fixed;
   bottom: 2rem;
@@ -393,7 +390,7 @@ section {
   filter: invert(100%);
 }
 
-/* General Link and Button Styles (from your original code) */
+/* General Link and Button Styles */
 a {
     color: #fff; /* Replaced var(--white) with direct hex code */
     font-weight: 400;
@@ -408,7 +405,7 @@ a {
 
 button:focus,
 a:focus {
-    outline: 2px solid #0056B3; /* Replaced var(--blue) with direct hex code */
+    outline: 2px solid #0056B3;
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -417,24 +414,24 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link:hover {
-    color: #0056B3; /* Replaced var(--blue) with direct hex code */
+    color: #0056B3;
 }
 
 /* Button */
 .btn {
     position: relative;
-    display: block; /* Changed from inline-block to block */
+    display: block;
     padding: 1rem 2rem;
     text-decoration: none;
     color: inherit;
-    border: 1px solid transparent; /* Changed to transparent as you have a background color */
+    border: 1px solid transparent;
     font-weight: 400;
-    background-color: #0056B3; /* Your chosen blue */
+    background-color: #0056B3;
     border-radius: 12px;
     z-index: 1;
-    margin: 1rem auto; /* Added for centering. Adjust top/bottom margin as needed. */
-    width: fit-content; /* Ensures the block element only takes up the width of its content */
-    transition: all 0.2s ease-in-out; /* Added for smoother transition */
+    margin: 1rem auto;
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
 }
 
 .btn:hover {
@@ -455,7 +452,7 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     left: 0;
     right: 100%;
-    background: #fff; /* Replaced var(--white) with direct hex code */
+    background: #fff;
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
@@ -464,11 +461,11 @@ body:not(.user-is-tabbing) a:focus {
 .btn:hover::after,
 .btn:focus::after {
     right: 0;
-    background: #0056B3; /* Replaced var(--blue) with direct hex code */
+    background: #0056B3;
 }
 
 .btn--blue {
-    background: #0056B3; /* Replaced var(--blue) with direct hex code */
+    background: #0056B3;
     transition: all 0.2s;
 }
 
@@ -487,7 +484,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: .6rem;
     color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid #0056B3; /* Replaced var(--blue) with direct hex code */
+    border-bottom: 1px solid #0056B3;
 }
 
 .link__text::after {
@@ -497,7 +494,7 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     left: 0;
     right: 100%;
-    background: #fff; /* Replaced var(--white) with direct hex code */
+    background: #fff;
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
@@ -510,7 +507,7 @@ body:not(.user-is-tabbing) a:focus {
 .link__text:hover::after,
 .link__text:focus:after {
     right: 0;
-    background: #0056B3; /* Replaced var(--blue) with direct hex code */
+    background: #0056B3;
 }
 
 .link__text span {
@@ -520,82 +517,69 @@ body:not(.user-is-tabbing) a:focus {
 
 /* Media Queries for Responsiveness */
 
-/* General adjustments for screens smaller than 1024px (Laptops, large tablets) */
 @media (max-width: 1024px) {
     .hero h1 {
-        font-size: 4rem; /* Slightly smaller for larger tablets/laptops */
+        font-size: 4rem;
     }
     .hero p {
         font-size: 1.8rem;
     }
     section {
-        padding: 1.5rem; /* Reduce padding slightly */
-        max-width: 95%; /* Take more width */
+        padding: 1.5rem;
+        max-width: 95%;
     }
     .section__content-wrapper {
-        gap: 2rem; /* Reduce gap */
+        gap: 2rem;
     }
 }
 
-/* Main Mobile Breakpoint: for screens smaller than 768px (Tablets portrait, Phones) */
 @media (max-width: 768px) {
-    /* Navbar Adjustments */
+    /* Navbar */
     .navbar {
-        padding: 1rem; /* Smaller padding for fixed navbar */
-        border-radius: 0; /* Remove border-radius on fixed full-width navbar */
-        justify-content: space-between; /* Logo left, toggle right */
+        padding: 1rem;
+        border-radius: 0;
+        justify-content: space-between;
     }
-
-    /* CRITICAL FIX: Menu specific adjustments for mobile */
     .navbar__menu {
-        display: none; /* Crucial: Hidden by default on mobile */
-        flex-direction: column; /* Stack nav items vertically */
+        display: none;
+        flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 100%; /* Position below the navbar */
+        top: 100%;
         left: 0;
         background: rgba(0, 0, 0, 0.95);
         padding: 1rem 0;
         box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* For animation */
-        transform: translateY(-10px); /* Start slightly off-screen for animation */
-        opacity: 0; /* Start invisible for animation */
-        pointer-events: none; /* Prevent clicks when hidden */
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
         margin-left: 0;
     }
-
-    /* When menu is active (toggled by JS) */
     .navbar__menu.active {
-        display: flex; /* Crucial: This shows it */
-        transform: translateY(0); /* Animate into view */
-        opacity: 1; /* Animate into view */
-        pointer-events: auto; /* Allow clicks when visible */
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
-
-    /* CRITICAL FIX: Ensure list items take full width and center text */
     .navbar__menu li { 
         width: 100%;
         text-align: center;
     }
-
     .navbar a {
-        padding: 0.8rem 0; /* More padding for easier tapping */
-        width: 100%; /* Make links take full width of list item */
-        display: block; /* Make links block level for full width */
+        padding: 0.8rem 0;
+        width: 100%;
+        display: block;
     }
-
-    /* Show the hamburger toggle button */
     .navbar__toggle {
         display: block;
     }
-
-    /* Adjust navbar logo on mobile */
     .navbar__logo {
-        margin-right: 0; /* Remove auto margin */
-        padding-left: 0.5rem; /* Add a little left padding */
+        margin-right: 0;
+        padding-left: 0.5rem;
     }
 
-    /* Hero Section Adjustments */
+    /* Hero Section */
     .hero {
         padding-left: 5vw;
         padding-right: 5vw;
@@ -620,51 +604,43 @@ body:not(.user-is-tabbing) a:focus {
         margin-bottom: 0.5rem;
     }
 
-    /* General Section Adjustments */
+    /* Sections */
     section {
-        padding: 1rem; /* Reduced padding for sections */
-        max-width: 95%; /* Allow sections to take more width */
-        margin: 1rem auto; /* Adjust margin between sections */
-        /* If content in sections becomes too tall due to flex-direction: column,
-           you might need to remove height: 100vh or min-height: 100vh here
-           and let content define height, or make it min-height: unset; */
+        padding: 1rem;
+        max-width: 95%;
+        margin: 1rem auto;
     }
-
-    /* Two-Column Layout (section__content-wrapper) */
     .section__content-wrapper {
-        flex-direction: column; /* Stack text and image vertically */
-        align-items: center; /* Center items when stacked */
-        gap: 1.5rem; /* Reduced gap between stacked content */
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
     }
-
     .section__text-content,
     .section__image-content {
-        min-width: unset; /* **CRITICAL FIX: Remove fixed minimum width** */
-        width: 100%; /* Allow them to take full width */
-        padding: 0.5rem; /* Adjust padding */
-        text-align: justify; /* Maintain justify for text */
+        min-width: unset;
+        width: 100%;
+        padding: 0.5rem;
+        text-align: justify;
     }
-
-    /* Specific Image Adjustments */
     .section__image {
-        max-width: 100%; /* Already good */
+        max-width: 100%;
         height: auto;
     }
     .edu__image {
-        min-width: unset; /* **CRITICAL FIX: Remove fixed minimum width for education images** */
-        max-width: 100%; /* Already good */
+        min-width: unset;
+        max-width: 100%;
         height: auto;
     }
 
-    /* Skills List Adjustments */
+    /* Skills List */
     .skills-list {
-        justify-content: center; /* Center skill tags */
-        gap: 0.8rem; /* Slightly smaller gap */
-        margin: 1rem 0; /* Adjust margin */
+        justify-content: center;
+        gap: 0.8rem;
+        margin: 1rem 0;
     }
     .skills-list li {
-        font-size: 0.9rem; /* Smaller font size for skill tags */
-        padding: 0.6em 1em; /* Adjust padding */
+        font-size: 0.9rem;
+        padding: 0.6em 1em;
     }
 
     /* Footer Adjustments */
@@ -672,20 +648,20 @@ body:not(.user-is-tabbing) a:focus {
         padding: 2rem 0;
     }
     .footer .row {
-        padding: 0 1rem; /* Reduce horizontal padding */
+        padding: 0 1rem;
     }
     .footer__social-links {
-        gap: 1rem; /* Reduce gap between social icons */
+        gap: 1rem;
     }
     .footer__social-image {
-        width: 28px; /* Slightly smaller icons */
+        width: 28px;
         height: 28px;
     }
     .footer p {
-        font-size: 0.8rem; /* Smaller footer text */
+        font-size: 0.8rem;
     }
 
-    /* Back to Top button */
+    /* "Back To Top" Button */
     .back-to-top {
         bottom: 1rem;
         right: 1rem;
@@ -697,7 +673,7 @@ body:not(.user-is-tabbing) a:focus {
         height: 20px;
     }
 
-    /* General H1, H2, H3 adjustments */
+    /* General H1, H2, H3 */
     h1, h2, h3 {
         font-size: 2rem; /* Adjusted for mobile */
         margin-bottom: 0.8rem;
