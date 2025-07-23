@@ -436,7 +436,8 @@ body:not(.user-is-tabbing) a:focus {
 
 .btn:hover {
   background-color: #00A3CC;
-  color: black;
+  color: white;
+  border-radius: 12px;
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
@@ -583,22 +584,22 @@ body:not(.user-is-tabbing) a:focus {
     .hero {
         padding-left: 5vw;
         padding-right: 5vw;
-        text-align: center; /* Center content in hero */
-        align-items: center; /* Center content horizontally */
+        text-align: center;
+        align-items: center;
     }
     .hero h1 {
-        font-size: 2.8rem; /* Significantly smaller for phones */
-        padding-left: 0; /* Remove left padding */
-        text-align: center; /* Center heading */
+        font-size: 2.8rem;
+        padding-left: 0;
+        text-align: center;
     }
     .hero p {
-        font-size: 1.1rem; /* Smaller paragraph text */
-        max-width: 100%; /* Allow paragraph to take full width */
-        padding-left: 0; /* Remove left padding */
-        text-align: center; /* Center paragraph */
-        margin-bottom: 1.5rem; /* Adjust margin */
+        font-size: 1.1rem;
+        max-width: 100%;
+        padding-left: 0;
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
-    .profile-pic { /* If you want to adjust profile pic size on mobile */
+    .profile-pic {
         width: 120px;
         height: 120px;
         margin-bottom: 0.5rem;
