@@ -77,7 +77,7 @@ body {
   justify-content: flex-end;
   gap: 2rem;
   margin: 0;
-  margin-left: 45%;
+  margin-left: 40%;
   padding: 0;
 }
 
@@ -561,6 +561,7 @@ body:not(.user-is-tabbing) a:focus {
         transform: translateY(-10px); /* Start slightly off-screen for animation */
         opacity: 0; /* Start invisible for animation */
         pointer-events: none; /* Prevent clicks when hidden */
+        margin-left: 0;
     }
 
     /* When menu is active (toggled by JS) */
